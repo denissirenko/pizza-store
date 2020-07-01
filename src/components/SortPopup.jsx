@@ -25,7 +25,6 @@ function SortPopup({ items }) {
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
     const sort = document.querySelector('.sort');
-    console.log(sort);
   }, []);
 
   return (
