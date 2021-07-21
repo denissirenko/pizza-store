@@ -2,11 +2,14 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { useHistory } from "react-router-dom";
+
 import cartEmptyImage from '../assets/img/empty-cart.png';
 import { CartItem, Button } from '../components';
 import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
 
 function Cart() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
 
@@ -35,8 +38,11 @@ function Cart() {
   };
 
   const onClickOrder = () => {
-    // console.log('ВАШ ЗАКАЗ', items);
-    alert("Спасибо за ваш заказ!")
+    if (window.confirm('Вы подтверждаете свой заказ?')) {
+      alert("Спасибо за ваш заказ!")
+      dispatch(clearCart());
+      history.push("/");
+    }
   };
 
   return (
