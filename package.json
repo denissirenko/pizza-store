@@ -9,7 +9,6 @@
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "json-server": "^0.16.1",
-    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-content-loader": "^6.0.3",
@@ -42,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.52.3"
   }
 }
